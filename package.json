@@ -1,0 +1,21 @@
+{
+  "name": "jenkins-pipeline",
+  "version": "1.0.0",
+  "description": "Project for setting up the Jenkins Pipeline",
+  "main": "index.js",
+  "scripts": {
+    "install-deps": "npm install",
+    "build": "echo 'Building project...' && mkdir -p dist && cp -r src/* dist/",
+    "test": "jest --coverage",
+    "deploy:staging": "echo 'Deploying to Staging...' && cp -r dist/ /var/www/staging",
+    "deploy:production": "echo 'Deploying Production...' && cp -r dist/ /var/www/local",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "supertest": "^6.3.0"
+  }
+}
