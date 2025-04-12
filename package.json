@@ -6,8 +6,8 @@
   "scripts": {
     "build": "echo 'Building project...' && mkdir -p dist && cp -r src/* dist/",
     "test": "jest --coverage",
-    "deploy:staging": "echo 'Deploying to Staging...' && cp -r dist/ /var/www/staging",
-    "deploy:production": "echo 'Deploying Production...' && cp -r dist/ /var/www/local",
+    "deploy:staging": "ENV=staging PORT=4000 node index.js",
+    "deploy:production": "ENV=production PORT=5000 node index.js",
     "start": "node src/index.js"
   },
   "dependencies": {

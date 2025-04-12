@@ -1,6 +1,11 @@
 pipeline {
     agent { label 'Jenkins-pileline-slave-1' }
 
+    environment {
+        STAGING_PORT = '4000'
+        PROD_PORT = '5000'
+    }
+
     stages {
         stage('install') {
             steps {
