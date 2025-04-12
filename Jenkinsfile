@@ -21,6 +21,23 @@ pipeline {
                 sh 'npm run test'
             }
         }
+
+        stage('Deploy to Staging') {
+            steps {
+                echo "Deploying to staging..."
+                sh './deploy-staging.sh'
+            }
+        }
+
+        stage('Deploy to Production') {
+            when {
+                branch 'master'
+            }
+            steps {
+                echo "Deploying to production..."
+                sh './deploy-production.sh'
+            }
+        }
     }
 
     post {
