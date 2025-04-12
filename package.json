@@ -4,7 +4,6 @@
   "description": "Project for setting up the Jenkins Pipeline",
   "main": "index.js",
   "scripts": {
-    "install-deps": "npm install",
     "build": "echo 'Building project...' && mkdir -p dist && cp -r src/* dist/",
     "test": "jest --coverage",
     "deploy:staging": "echo 'Deploying to Staging...' && cp -r dist/ /var/www/staging",
